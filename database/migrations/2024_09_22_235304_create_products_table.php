@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->decimal('price', 10, 2);
             $table->text('description')->nullable();
-            $table->string('category_id'); 
-            $table->foreign('category_id')->references('category_id')->on('categories')->onDelete('cascade');
+            $table->string('category_id'); // Category ID as string
+            $table->foreign('category_id')->references('category_id')->on('categories')->onDelete('cascade'); // Reference category_id as a string
             $table->timestamps();
         });
     }

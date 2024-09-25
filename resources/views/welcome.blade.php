@@ -71,7 +71,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="taital_main">
-                                    <h4 class="banner_taital"><span class="font_size_90">50%</span> Discount Online Shop</h4>
+                                    <h4 class="banner_taital"><span class="font_size_90">100%</span> Find quality products</h4>
                                     <p class="banner_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</p>
                                     <div class="book_bt"><a href="#">Shop Now</a></div>
                                 </div>
@@ -114,31 +114,42 @@
                <div class="col-lg-10 col-sm-12 main">
                   <div class="col">
                      <div class="box_main">
-                        <div class="icon_1"></div>
+                        <div class="icon_container">
+                           <img src="{{ asset('build/assets/images/icon-1.png') }}" class="icon_1" alt="Icon 1">
+                       </div>
+                       
                         <h4 class="fashion_text active">New Fashion</h4>
                      </div>
                   </div>
                   <div class="col">
                      <div class="box_main">
-                        <div class="icon_2"></div>
+                        <div class="icon_container">
+                           <img src="{{ asset('build/assets/images/icon-2.png') }}" class="icon_2" alt="Icon 2">
+                       </div>
                         <h4 class="fashion_text">Clothing</h4>
                      </div>
                   </div>
                   <div class="col">
                      <div class="box_main">
-                        <div class="icon_3"></div>
+                        <div class="icon_container">
+                           <img src="{{ asset('build/assets/images/icon-3.png') }}" class="icon_4" alt="Icon 4">
+                       </div>
                         <h4 class="fashion_text">Watches</h4>
                      </div>
                   </div>
                   <div class="col">
                      <div class="box_main">
-                        <div class="icon_4"></div>
+                        <div class="icon_container">
+                           <img src="{{ asset('build/assets/images/icon-4.png') }}" class="icon_4" alt="Icon 4">
+                       </div>
                         <h4 class="fashion_text">Accessories</h4>
                      </div>
                   </div>
                   <div class="col">
                      <div class="box_main">
-                        <div class="icon_5"></div>
+                        <div class="icon_container">
+                           <img src="{{ asset('build/assets/images/icon-6.png') }}" class="icon_6" alt="Icon 6">
+                       </div>
                         <h4 class="fashion_text">Sweaters & Jackets</h4>
                      </div>
                   </div>

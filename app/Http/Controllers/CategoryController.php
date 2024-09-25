@@ -4,9 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Product;
 
 class CategoryController extends Controller
 {
+
+    public function showProducts($category_id)
+    {
+        $category = Category::with('products')->where('category_id', $category_id)->first();
+    
+        if (!$category) {
+            return redirect()->back()->with('error', 'Category not found.');
+        }
+    
+        return view('admin.products.index', compact('category'));
+    }
+    
+
 
     public function view() {
         $categories = Category::get(); 
@@ -48,5 +62,28 @@ class CategoryController extends Controller
         $category = Category::findOrFail($category_id); 
         return view('admin.categories.edit', compact('category')); 
     }
+
+    public function update(Request $request, $category_id)
+{
+    
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'description' => 'nullable|string',
+    ]);
+
+
+    $category = Category::findOrFail($category_id);
+
+    // Update the category with the new data
+    $category->name = $request->input('name');
+    $category->description = $request->input('description');
+    
+
+    $category->save();
+
+    
+    return redirect('categories')->with('status', 'Category updated successfully');
+}
+
     
 }

@@ -43,7 +43,7 @@
             @enderror
         </div>
         <div class="form-group" style="margin-bottom: 15px;">
-            <label for="name" style="font-weight: bold;">Name</label>
+            <label for="name" style="font-weight: bold;">Category Name</label>
             <input type="text" id="name" name="name" value="{{ old('name') }}" class="form-control" style="width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 5px;">
             @error('name') <!-- Display validation error for name -->
                 <span class="text-danger">{{ $message }}</span>
@@ -59,7 +59,7 @@
         </div>
 
         <button type="submit" class="btn btn-primary" style="padding: 10px 20px; background-color: #007bff; border: none; border-radius: 5px; color: white;">Save</button>
-        <a href="{{ url('categories') }}" class="btn btn-secondary" style="padding: 10px 20px; margin-left: 10px; background-color: #6c757d; border: none; border-radius: 5px; color: white;">Back</a>
+        <a href="{{ url('/dashboard') }}" class="btn btn-secondary" style="padding: 10px 20px; margin-left: 10px; background-color: #007bff; border: none; border-radius: 5px; color: white;">Back</a>
     </form>
 </div>
 

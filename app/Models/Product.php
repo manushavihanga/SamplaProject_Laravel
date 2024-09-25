@@ -13,6 +13,6 @@ class Product extends Model
 
     public function category()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class, 'category_id', 'category_id'); // Specify foreign key and local key
     }
 }

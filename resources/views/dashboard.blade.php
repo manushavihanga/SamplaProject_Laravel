@@ -123,15 +123,19 @@
 <!-- Header Section End -->
 
    
-<div class="container" style="padding: 20px; background-color: #f9f9f9; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); max-width: 800px; margin: 50px auto 20px auto; margin-top: 20px;">
+<div class="container" style="padding: 20px; background-color: #f9f9f9; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); max-width: 800px; margin: 0px auto;">
    <h1 style="font-size: 32px; font-weight: bold; margin-bottom: 20px; text-align: center;">Categories</h1>
-   <a href="{{ url('categories/create')}}" class="btn btn-primary" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #007bff; color: white; border-radius: 5px; text-align: center; text-decoration: none;">Add Category</a>
-   <a href="{{ url('categories')}}" class="btn btn-primary" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #007bff; color: white; border-radius: 5px; text-align: center; text-decoration: none;">View Category</a>
+   <div style="display: flex; justify-content: center; gap: 15px;">
+       <a href="{{ url('categories/create')}}" class="btn btn-primary" style="padding: 10px 20px; font-size: 18px; background-color: #007bff; color: white; border-radius: 5px; text-align: center; text-decoration: none;">Add Category</a>
+       <a href="{{ url('categories')}}" class="btn btn-primary" style="padding: 10px 20px; font-size: 18px; background-color: #007bff; color: white; border-radius: 5px; text-align: center; text-decoration: none;">View Category</a>
+   </div>
 </div>
-
 <div class="container" style="padding: 20px; background-color: #f9f9f9; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); max-width: 800px; margin: 50px auto; margin-top: 20px;">
    <h1 style="font-size: 32px; font-weight: bold; margin-bottom: 20px; text-align: center;">Products</h1>
-   <a href="{{ url('categories/create')}}" class="btn btn-primary" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #007bff; color: white; border-radius: 5px; text-align: center; text-decoration: none;">Add Category</a>
+   <div style="display: flex; justify-content: center; gap: 15px;">
+       <a href="{{ url('products/create')}}" class="btn btn-primary" style="padding: 10px 20px; font-size: 18px; background-color: #007bff; color: white; border-radius: 5px; text-align: center; text-decoration: none;">Add Product</a>
+       <a href="{{ url('products')}}" class="btn btn-primary" style="padding: 10px 20px; font-size: 18px; background-color: #007bff; color: white; border-radius: 5px; text-align: center; text-decoration: none;">View Product</a>
+   </div>
 </div>
 
 
