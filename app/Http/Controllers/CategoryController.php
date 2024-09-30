@@ -8,7 +8,6 @@ use App\Models\Product;
 
 class CategoryController extends Controller
 {
-
     public function showProducts($category_id)
     {
         $category = Category::with('products')->where('category_id', $category_id)->first();
@@ -19,11 +18,10 @@ class CategoryController extends Controller
     
         return view('admin.products.index', compact('category'));
     }
-    
 
-
-    public function view() {
-        $categories = Category::get(); 
+    public function view() 
+    {
+        $categories = Category::all(); 
         return view('admin.categories.view', compact('categories')); 
     }
   
@@ -34,28 +32,35 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'category_id'=>'required|max:255|string',
-            'name'=>'required|max:255|string',
-            'description'=>'required|max:255|string'
+        // Validate the request
+        $validated = $request->validate([
+            'category' => 'required|string',
+            'category_id' => 'required|string',
+            'description' => 'nullable|string',
         ]);
+    
+        // Create a new category
         Category::create([
-            'category_id'=>$request->category_id,
-            'name'=>$request->name,
-            'description'=>$request->description,
-            
+            'name' => $validated['category'],
+            'category_id' => $validated['category_id'],
+            'description' => $validated['description'],
         ]);
-        return redirect('categories/create')->with('status','Category Created');
+    
+        // Redirect back with success message
+        return redirect()->route('categories.view')->with('success', 'Category added successfully!');
     }
+    
 
     public function destroy($category_id)
     {
         $category = Category::findOrFail($category_id); 
+        
+        // Optionally, check if products are associated with the category before deleting
+        // $category->products()->delete(); // If you want to delete products too
         $category->delete(); 
-    
-        return redirect('categories')->with('status', 'Category deleted successfully');
-    }
 
+        return redirect()->route('categories.view')->with('status', 'Category deleted successfully');
+    }
 
     public function edit($category_id)
     {
@@ -64,26 +69,19 @@ class CategoryController extends Controller
     }
 
     public function update(Request $request, $category_id)
-{
-    
-    $request->validate([
-        'name' => 'required|string|max:255',
-        'description' => 'nullable|string',
-    ]);
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'nullable|string',
+        ]);
 
+        $category = Category::findOrFail($category_id);
 
-    $category = Category::findOrFail($category_id);
+        // Update the category with the new data
+        $category->name = $request->input('name');
+        $category->description = $request->input('description');
+        $category->save();
 
-    // Update the category with the new data
-    $category->name = $request->input('name');
-    $category->description = $request->input('description');
-    
-
-    $category->save();
-
-    
-    return redirect('categories')->with('status', 'Category updated successfully');
-}
-
-    
+        return redirect()->route('categories.view')->with('status', 'Category updated successfully');
+    }
 }

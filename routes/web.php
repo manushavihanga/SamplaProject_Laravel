@@ -17,11 +17,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('categories',[App\Http\Controllers\CategoryController::class,'view']);
+Route::get('categories',[App\Http\Controllers\CategoryController::class,'view'])->name('categories.view');
 Route::get('categories/{category_id}/edit', [App\Http\Controllers\CategoryController::class, 'edit'])->name('categories.edit');
 Route::delete('categories/{category_id}', [App\Http\Controllers\CategoryController::class, 'destroy'])->name('categories.destroy');
 Route::get('categories/create',[App\Http\Controllers\CategoryController::class,'create']);
-Route::post('categories/create',[App\Http\Controllers\CategoryController::class,'store']);
+Route::post('categories/create',[App\Http\Controllers\CategoryController::class,'store'])->name('categories.store');
 
 Route::put('categories/{category_id}', [App\Http\Controllers\CategoryController::class, 'update'])->name('categories.update');
 
