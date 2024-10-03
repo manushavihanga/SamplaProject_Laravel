@@ -3,7 +3,7 @@
     
     <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
         <thead>
-            <tr style="background-color: #ab08f6; color: white;">
+            <tr style="background-color: #584990; color: white;">
                 <th style="padding: 12px; border: 1px solid #ddd; text-align: left;">Category ID</th>
                 <th style="padding: 12px; border: 1px solid #ddd; text-align: left;">Category Type</th>
                 <th style="padding: 12px; border: 1px solid #ddd; text-align: left;">Description</th>

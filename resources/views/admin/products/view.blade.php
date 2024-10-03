@@ -3,7 +3,7 @@
 
     <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
         <thead>
-            <tr style="background-color: #6706ef; color: white;">
+            <tr style="background-color: #584990; color: white;">
                 <th style="padding: 12px; border: 1px solid #ddd; text-align: left;">Product ID</th>
                 <th style="padding: 12px; border: 1px solid #ddd; text-align: left;">Name</th>
                 <th style="padding: 12px; border: 1px solid #ddd; text-align: left;">Price</th>
